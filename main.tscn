@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn3f6crsri53"]
+
+[ext_resource type="Script" path="res://mainasd.gd" id="1_eib0e"]
+[ext_resource type="Texture2D" uid="uid://dc5k6slq23vhy" path="res://Sprites/Icon37.png" id="1_k6j24"]
+[ext_resource type="Texture2D" uid="uid://divsflmky040n" path="res://Sprites/Icon27.png" id="2_ovxlq"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eib0e")
+
+[node name="fl_demon" type="Button" parent="." groups=["InAppItem"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -94.5
+offset_right = -41.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_k6j24")
+icon_alignment = 1
+expand_icon = true
+
+[node name="fl_cerberus" type="Button" parent="." groups=["InAppItem"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 47.0
+offset_top = -94.5
+offset_right = 216.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("2_ovxlq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="fl_cerberus2" type="Button" parent="." groups=["InAppItem"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.0
+offset_top = 129.0
+offset_right = 214.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GOLD BUY"
+icon_alignment = 1
+expand_icon = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.909804, 0.752941, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -22.0
+offset_right = 157.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Connecting To Google Play Billing"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -179.0
+offset_top = -1.0
+offset_right = 179.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "GOLD : "
+
+[connection signal="button_up" from="fl_demon" to="." method="_on_PurchaseButton" binds= ["0"]]
+[connection signal="pressed" from="fl_cerberus" to="." method="_on_fl_cerberus_pressed"]
+[connection signal="pressed" from="fl_cerberus2" to="." method="_on_fl_cerberus_2_pressed"]
